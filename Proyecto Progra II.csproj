@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MiDbContext\" />
     <Folder Include="Dtos\" />
+    <Folder Include="MiDbContext\" />
   </ItemGroup>
 
 </Project>
