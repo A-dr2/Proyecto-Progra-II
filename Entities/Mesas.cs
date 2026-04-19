@@ -7,6 +7,6 @@
         public int ZonaId { get; set; }
 
         public List<Reservas> Reservas { get; set; } = null!;
-        public List<BloqueoMesa> Bloqueos { get; set; } null!;
+        public List<BloqueoMesa> Bloqueos { get; set; } = null!;
     }
 }

@@ -1,4 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using static Proyecto_Progra_II.MyAppDbContext;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Base de datos en memoria
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseInMemoryDatabase("ProyectoAPIDb"));
 
 // Add services to the container.
 
