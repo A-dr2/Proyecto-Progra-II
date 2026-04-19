@@ -1,8 +1,9 @@
-﻿namespace Proyecto_Progra_II.Entities
+﻿namespace RestauranteApi.Entidades
 {
-    public class EstadoReserva
+    public enum EstadoReserva
     {
-        public int Id { get; set; }
-        public required string Nombre { get; set; }
+        Activa,
+        Cancelada,
+        Pendiente
     }
 }
