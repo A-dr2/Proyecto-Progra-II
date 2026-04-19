@@ -1,4 +1,4 @@
-﻿namespace RestauranteApi.Entidades
+﻿namespace Proyecto_Progra_II.Entities
 {
     public enum EstadoReserva
     {
