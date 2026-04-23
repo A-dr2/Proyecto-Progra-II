@@ -1,6 +1,6 @@
 ﻿namespace Proyecto_Progra_II.Services
 {
-    public class HorarioServices
+    public class TurnoServices
     {
     }
 }

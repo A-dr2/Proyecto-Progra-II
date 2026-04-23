@@ -7,7 +7,7 @@
         public int CantidadPersonas { get; set; }
         public DateTime FechaSolicitud { get; set; }
 
-        public int clienteId { get; set; }
-        public List<Horario> Horarios { get; set; } = null!;
+        public int ClienteId { get; set; }
+        public List<Turno> Turnos { get; set; } = null!;
     }
 }

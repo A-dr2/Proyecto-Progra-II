@@ -9,7 +9,8 @@
         public int ClienteId { get; set; }
         public int MesaId { get; set; }
         public int EstadoReservaId { get; set; }
-        public int HorarioId { get; set; }
+        public int TurnoId { get; set; }
+        public int ListaDeEsperaId { get; set; }
 
         public enum EstadoReserva
         {

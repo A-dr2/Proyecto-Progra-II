@@ -1,6 +1,6 @@
 ﻿namespace Proyecto_Progra_II.Entities
 {
-    public class BloqueoMesa
+    public class EstadoMesa
     {
         public int Id { get; set; }
         public enum TipoBloqueo
