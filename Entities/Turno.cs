@@ -6,6 +6,6 @@
         public TimeSpan HoraInicio { get; set; }
         public TimeSpan HoraFin { get; set; }
 
-
+        public List<Reserva> Reservas { get; set; } = null!;
     }
 }

@@ -6,5 +6,6 @@
         public required string Nombre { get; set; }
 
         public List<Mesa> Mesas { get; set; } =  null!;
+
     }
 }
