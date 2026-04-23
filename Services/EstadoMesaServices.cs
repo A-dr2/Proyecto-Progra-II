@@ -3,29 +3,29 @@ using Proyecto_Progra_II.Services.Interfaces;
 
 namespace Proyecto_Progra_II.Services
 {
-    public class UsuariosServices : IUsuariosServices
+    public class EstadoMesaServices : IEstadoMesaServices
     {
-        public Usuario CreateUsuario(Usuario usuario)
+        public EstadoMesa CreateBloqueoMesa(EstadoMesa bloqueoMesa)
         {
             throw new NotImplementedException();
         }
 
-        public void DeleteUsuario(int id)
+        public void DeleteBloqueoMesa(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Usuario GetUsuarioById(int id)
+        public List<EstadoMesa> GetAllBloqueoMesa()
         {
             throw new NotImplementedException();
         }
 
-        public List<Usuario> GetUsuarios()
+        public EstadoMesa GetBloqueoMesaById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Usuario UpdateUsuario(int id, Usuario usuario)
+        public EstadoMesa UpdateBloqueoMesa(int id, EstadoMesa bloqueoMesa)
         {
             throw new NotImplementedException();
         }

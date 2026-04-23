@@ -3,29 +3,29 @@ using Proyecto_Progra_II.Services.Interfaces;
 
 namespace Proyecto_Progra_II.Services
 {
-    public class UsuariosServices : IUsuariosServices
+    public class TurnoServices : ITurnoServices
     {
-        public Usuario CreateUsuario(Usuario usuario)
+        public Turno CreateTurno(Turno turno)
         {
             throw new NotImplementedException();
         }
 
-        public void DeleteUsuario(int id)
+        public void DeleteTurno(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Usuario GetUsuarioById(int id)
+        public Turno GetTurnoById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Usuario> GetUsuarios()
+        public List<Turno> GetTurnos()
         {
             throw new NotImplementedException();
         }
 
-        public Usuario UpdateUsuario(int id, Usuario usuario)
+        public Turno UpdateTurno(int id, Turno turno)
         {
             throw new NotImplementedException();
         }
