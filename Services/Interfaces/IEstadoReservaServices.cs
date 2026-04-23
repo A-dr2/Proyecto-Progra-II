@@ -4,7 +4,7 @@ namespace Proyecto_Progra_II.Services.Interfaces
 {
     public interface IEstadoReservaServices
     {
-        public List<EstadoReserva> GetAllEstadoReserva(); 
+     /*   public List<EstadoReserva> GetAllEstadoReserva(); 
         public EstadoReserva GetEstadoReservaId(int id);
         public EstadoReserva CreateEstadoReserva(EstadoReserva estadoReserva);
 
@@ -13,6 +13,6 @@ namespace Proyecto_Progra_II.Services.Interfaces
         public void DeleteEstadoReserva(int id);
 
 
-
+        */
     }
 }
