@@ -5,9 +5,11 @@
         public int Id { get; set; }
         public int Capacidad { get; set; }
         public int ZonaId { get; set; }
-        public int ReservaId { get; set; }
 
-        public List<Reserva> Reservas { get; set; } = null!;
+        public int EstadoMesaId { get; set; }
+
+
+        public ICollection<ReservaMesa> ReservaMesas { get; set; } = new List<ReservaMesa>();
         public List<EstadoMesa> Estados { get; set; } = null!;
         public Zona Zona { get; set; } = null!;
     }
