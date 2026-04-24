@@ -10,7 +10,7 @@
 
 
         public ICollection<ReservaMesa> ReservaMesas { get; set; } = new List<ReservaMesa>();
-        public List<EstadoMesa> Estados { get; set; } = null!;
+      
         public Zona Zona { get; set; } = null!;
     }
 }
