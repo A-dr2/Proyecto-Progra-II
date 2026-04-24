@@ -19,6 +19,7 @@
         public enum EstadoReserva
         {
             Confirmada,
+            Pendiente,
             Cancelada
         }
 
