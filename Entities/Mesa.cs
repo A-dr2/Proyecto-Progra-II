@@ -12,5 +12,6 @@
         public ICollection<ReservaMesa> ReservaMesas { get; set; } = new List<ReservaMesa>();
       
         public Zona Zona { get; set; } = null!;
+        public EstadoMesa EstadoMesa { get; set; } = null!; 
     }
 }
