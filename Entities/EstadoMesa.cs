@@ -14,8 +14,8 @@
         public required string Motivo { get; set; }
 
         public int MesaId { get; set; }
-        public Mesa Mesa { get; set; } = null!;
 
         public List<ListaDeEspera> ListasDeEspera { get; set; } = null!;
+        public List<Mesa> Mesas { get; set; } = null!;  
     }
 }
