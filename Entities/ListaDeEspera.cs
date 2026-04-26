@@ -7,6 +7,6 @@
         public DateTime FechaSolicitud { get; set; }
 
         public int ReservaId { get; set; }
-        public List<Turno> Turnos { get; set; } = null!;
+        
     }
 }

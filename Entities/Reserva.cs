@@ -7,14 +7,12 @@
         public int CantidadPersonas { get; set; }
 
         public int ClienteId { get; set; }
-        public int EstadoReservaId { get; set; }
-        public int TurnoId { get; set; }
         public int ListaDeEsperaId { get; set; }
 
-        public Usuario Cliente { get; set; } = null!;
-        public Turno Turno { get; set; } = null!;
+        public Cliente Cliente { get; set; } = null!;
         public ListaDeEspera ListaDeEspera { get; set; } = null!;
         public ICollection<ReservaMesa> ReservaMesas { get; set; } = new List<ReservaMesa>();
+        public ICollection<TurnoReserva> TurnoReservas { get; set; } = new List<TurnoReserva>();
 
         public enum EstadoReserva
         {

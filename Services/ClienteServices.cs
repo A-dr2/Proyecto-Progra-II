@@ -3,9 +3,9 @@ using Proyecto_Progra_II.Services.Interfaces;
 
 namespace Proyecto_Progra_II.Services
 {
-    public class UsuariosServices : IUsuariosServices
+    public class ClienteServices : IClienteServices
     {
-        public Usuario CreateUsuario(Usuario usuario)
+        public Cliente CreateUsuario(Cliente usuario)
         {
             throw new NotImplementedException();
         }
@@ -15,17 +15,17 @@ namespace Proyecto_Progra_II.Services
             throw new NotImplementedException();
         }
 
-        public Usuario GetUsuarioById(int id)
+        public Cliente GetUsuarioById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Usuario> GetUsuarios()
+        public List<Cliente> GetUsuarios()
         {
             throw new NotImplementedException();
         }
 
-        public Usuario UpdateUsuario(int id, Usuario usuario)
+        public Cliente UpdateUsuario(int id, Cliente usuario)
         {
             throw new NotImplementedException();
         }
