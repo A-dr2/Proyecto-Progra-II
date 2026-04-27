@@ -15,7 +15,7 @@
 
         
 
-        public List<ListaDeEspera> ListasDeEspera { get; set; } = null!;
+      //???  public List<ListaDeEspera> ListasDeEspera { get; set; } = null!;
         
     }
 }
