@@ -1,4 +1,6 @@
 using Proyecto_Progra_II.MiDbContext;
+using Proyecto_Progra_II.Services;
+using Proyecto_Progra_II.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<MyAppDbContext>();
+builder.Services.AddScoped<IClienteServices, ClienteServices>();
 
 var app = builder.Build();
 
