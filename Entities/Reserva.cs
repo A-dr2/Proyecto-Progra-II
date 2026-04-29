@@ -11,15 +11,10 @@
 
         public Cliente Cliente { get; set; } = null!;
         public ListaDeEspera ListaDeEspera { get; set; } = null!;
-        public ICollection<ReservaMesa> ReservaMesas { get; set; } = new List<ReservaMesa>();
+       public List<Mesa> Mesas { get; set; } = new List<Mesa>();
         public ICollection<TurnoReserva> TurnoReservas { get; set; } = new List<TurnoReserva>();
 
-        public enum EstadoReserva
-        {
-            Confirmada,
-            Pendiente,
-            Cancelada
-        }
-
+        public int EstadoReservaId { get; set; }
+        public EstadoReserva EstadoReserva { get; set; } = null!;
     }
 }

@@ -18,7 +18,7 @@ namespace Proyecto_Progra_II.MiDbContext
         public DbSet<Mesa> Mesas { get; set; }
         public DbSet<Turno> Turnos { get; set; }
         public DbSet<TurnoReserva> TurnoReservas { get; set; }
-        public DbSet<ReservaMesa> ReservaMesas { get; set; }
+        public DbSet<EstadoReserva> EstadosReserva { get; set; }
         public DbSet<Zona> Zonas { get; set; }
 
 
