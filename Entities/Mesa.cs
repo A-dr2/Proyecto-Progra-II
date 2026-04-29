@@ -9,8 +9,7 @@
         public int EstadoMesaId { get; set; }
 
 
-        public ICollection<ReservaMesa> ReservaMesas { get; set; } = new List<ReservaMesa>();
-      
+        public Reserva? Reserva { get; set; } = null;
         public Zona Zona { get; set; } = null!;
         public EstadoMesa EstadoMesa { get; set; } = null!; 
     }
