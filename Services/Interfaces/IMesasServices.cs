@@ -4,10 +4,12 @@ namespace Proyecto_Progra_II.Services.Interfaces
 {
     public interface IMesasServices
     {
-        public List<Mesa> GetMesas();
-        public Mesa GetMesaById(int id);
-        public Mesa CreateMesa(Mesa mesa);
-        public Mesa UpdateMesa(int id, Mesa mesa);
-        public void DeleteMesa(int id);
+        public List<Mesas> GetAllMesas();
+        public Mesas GetMesaById(int id);
+        public Mesas AgregarMesas(Mesas mesa);
+        public Mesas ActualizarMesas(int id, Mesas mesa);
+        public void EliminarMesas(int id);
+        public string ObtenerEstadoMesa(int id);
+
     }
 }
