@@ -5,12 +5,22 @@ namespace Proyecto_Progra_II.Services
 {
     public class MesasServices : IMesasServices
     {
-        public Mesa CreateMesa(Mesa mesa)
+        public Mesa ActualizarMesas(int id, Mesa mesa)
         {
             throw new NotImplementedException();
         }
 
-        public void DeleteMesa(int id)
+        public Mesa AgregarMesas(Mesa mesa)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void EliminarMesas(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Mesa> GetAllMesas()
         {
             throw new NotImplementedException();
         }
@@ -20,12 +30,7 @@ namespace Proyecto_Progra_II.Services
             throw new NotImplementedException();
         }
 
-        public List<Mesa> GetMesas()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Mesa UpdateMesa(int id, Mesa mesa)
+        public string ObtenerEstadoMesa(int id)
         {
             throw new NotImplementedException();
         }

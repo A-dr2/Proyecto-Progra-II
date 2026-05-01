@@ -5,7 +5,7 @@
         public int Id { get; set; }
         public required string Nombre { get; set; }
 
-        public List<Mesa> Mesas { get; set; } =  null!;
+        public ICollection<Mesa> Mesas { get; set; } =  new List<Mesa>();
 
     }
 }
