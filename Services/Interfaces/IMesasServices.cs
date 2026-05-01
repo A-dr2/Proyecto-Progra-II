@@ -2,12 +2,15 @@
 
 namespace Proyecto_Progra_II.Services.Interfaces
 {
-    public interface IMesasServices
+    public interface IMesaServices
     {
-        public List<Mesa> GetMesas();
-        public Mesa GetMesaById(int id);
-        public Mesa CreateMesa(Mesa mesa);
-        public Mesa UpdateMesa(int id, Mesa mesa);
-        public void DeleteMesa(int id);
+        List<Mesa> GetAllMesas();
+        Mesa GetMesaById(int id);
+        Mesa CreateMesa(Mesa mesa);
+        Mesa UpdateMesa(int id, Mesa mesa);
+
+        bool EstaDisponible(int mesaId);
+
+        void CambiarEstado(int mesaId, int estadoId, string? motivo = null);
     }
 }

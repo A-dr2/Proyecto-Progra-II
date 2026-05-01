@@ -4,10 +4,8 @@ namespace Proyecto_Progra_II.Services.Interfaces
 {
     public interface IListaDeEsperaServices
     {
-        public List<ListaDeEspera> GetListaDeEspera();
-        public ListaDeEspera GetListaDeEsperaById(int id);
-        public ListaDeEspera CreateListaDeEspera(ListaDeEspera listaDeEspera);
-        public ListaDeEspera UpdateListaDeEspera(int id, ListaDeEspera listaDeEspera);
-        public void DeleteListaDeEspera(int id);
+        public ListaDeEspera AgregarALista(Reserva reserva); // crea la lista de espera
+        public Reserva? ObtenerSiguiente(); // obtiene la siguiente reserva en la lista de espera
+        public List<ListaDeEspera> GetListaDeEspera(); // obtiene la lista de espera completa
     }
 }

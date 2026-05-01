@@ -3,10 +3,7 @@
     public class ListaDeEspera
     {
         public int Id { get; set; }
-        
         public DateTime FechaSolicitud { get; set; }
-
-        public int ReservaId { get; set; }
-        
+        public Reserva Reserva { get; set; } = null!;
     }
 }

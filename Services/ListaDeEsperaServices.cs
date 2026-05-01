@@ -1,34 +1,41 @@
-﻿
-using Proyecto_Progra_II.Entities;
+﻿using Proyecto_Progra_II.Entities;
 using Proyecto_Progra_II.Services.Interfaces;
 
-namespace Proyecto_Progra_II.Services
+/* namespace Proyecto_Progra_II.Services
 {
-    public class ListaDeEsperaServices : IListaDeEsperaServices
+    public class ListaDeEsperaServices : IListaDeEsperaServices    esta parte sigue necesitando de reserva 
     {
-        public ListaDeEspera CreateListaDeEspera(ListaDeEspera listaDeEspera)
+        private static List<ListaDeEspera> _lista = new List<ListaDeEspera>();
+        private static int _id = 1;
+
+        public ListaDeEspera AgregarALista(Reserva reserva)
         {
-            throw new NotImplementedException();
+            var nueva = new ListaDeEspera
+            {
+                Id = _id++,
+                Reserva = reserva,        
+                FechaSolicitud = DateTime.Now
+            };
+
+            _lista.Add(nueva);
+            return nueva;
         }
 
-        public void DeleteListaDeEspera(int id)
+        public Reserva? ObtenerSiguiente()
         {
-            throw new NotImplementedException();
+            if (_lista.Count == 0)
+                return null;
+
+            var primero = _lista.OrderBy(x => x.FechaSolicitud).First();
+
+            _lista.Remove(primero);
+
+            return primero.Reserva;
         }
 
         public List<ListaDeEspera> GetListaDeEspera()
         {
-            throw new NotImplementedException();
+            return _lista.OrderBy(x => x.FechaSolicitud).ToList();
         }
-
-        public ListaDeEspera GetListaDeEsperaById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ListaDeEspera UpdateListaDeEspera(int id, ListaDeEspera listaDeEspera)
-        {
-            throw new NotImplementedException();
-        }
-    }
-}
+    } 
+} */

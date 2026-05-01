@@ -3,31 +3,100 @@ using Proyecto_Progra_II.Services.Interfaces;
 
 namespace Proyecto_Progra_II.Services
 {
-    public class MesasServices : IMesasServices
+    public class MesaServices : IMesaServices
     {
-        public Mesa CreateMesa(Mesa mesa)
+        // 🔹 Estados simulados
+        private static List<EstadoMesa> _estados = new List<EstadoMesa>()
         {
-            throw new NotImplementedException();
+            new EstadoMesa { Id = 1, Nombre = "Disponible" },
+            new EstadoMesa { Id = 2, Nombre = "Ocupada" },
+            new EstadoMesa { Id = 3, Nombre = "Bloqueada" },
+            new EstadoMesa { Id = 4, Nombre = "Mantenimiento" }
+        };
+
+        // 🔹 Mesas simuladas
+        private static List<Mesa> _mesas = new List<Mesa>()
+        {
+            new Mesa
+            {
+                Id = 1, Capacidad = 4, ZonaId = 1,
+                EstadoMesaId = 1,
+                EstadoMesa = _estados.First(e => e.Id == 1)
+            },
+            new Mesa
+            {
+                Id = 2, Capacidad = 2, ZonaId = 1,
+                EstadoMesaId = 3,
+                EstadoMesa = _estados.First(e => e.Id == 3),
+                ObservacionEstado = "Pata rota"
+            }
+        };
+
+        // 🔹 GET ALL
+        public List<Mesa> GetAllMesas()
+        {
+            return _mesas;
         }
 
-        public void DeleteMesa(int id)
-        {
-            throw new NotImplementedException();
-        }
-
+        // 🔹 GET BY ID
         public Mesa GetMesaById(int id)
         {
-            throw new NotImplementedException();
+            var mesa = _mesas.FirstOrDefault(m => m.Id == id);
+
+            if (mesa == null)
+                throw new Exception("Mesa no encontrada");
+
+            return mesa;
         }
 
-        public List<Mesa> GetMesas()
+        // 🔹 CREATE
+        public Mesa CreateMesa(Mesa mesa)
         {
-            throw new NotImplementedException();
+            mesa.Id = _mesas.Count + 1;
+
+            // por defecto disponible
+            var estado = _estados.First(e => e.Id == 1);
+
+            mesa.EstadoMesaId = estado.Id;
+            mesa.EstadoMesa = estado;
+
+            _mesas.Add(mesa);
+            return mesa;
         }
 
+        // 🔹 UPDATE (solo datos básicos)
         public Mesa UpdateMesa(int id, Mesa mesa)
         {
-            throw new NotImplementedException();
+            var existente = GetMesaById(id);
+
+            existente.Capacidad = mesa.Capacidad;
+            existente.ZonaId = mesa.ZonaId;
+
+            return existente;
+        }
+
+        // 🔹 DISPONIBILIDAD
+        public bool EstaDisponible(int mesaId)
+        {
+            var mesa = GetMesaById(mesaId);
+
+            return mesa.EstadoMesaId == 1; // Disponible
+        }
+
+        // 🔹 CAMBIAR ESTADO (con mensaje opcional)
+        public void CambiarEstado(int mesaId, int estadoId, string? motivo = null)
+        {
+            var mesa = GetMesaById(mesaId);
+
+            var estado = _estados.FirstOrDefault(e => e.Id == estadoId);
+
+            if (estado == null)
+                throw new Exception("Estado no válido");
+
+            mesa.EstadoMesaId = estado.Id;
+            mesa.EstadoMesa = estado;
+
+            mesa.ObservacionEstado = motivo;
         }
     }
 }
