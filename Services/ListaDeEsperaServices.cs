@@ -1,9 +1,9 @@
 ﻿using Proyecto_Progra_II.Entities;
 using Proyecto_Progra_II.Services.Interfaces;
 
-/* namespace Proyecto_Progra_II.Services
+namespace Proyecto_Progra_II.Services
 {
-    public class ListaDeEsperaServices : IListaDeEsperaServices    esta parte sigue necesitando de reserva 
+    public class ListaDeEsperaServices : IListaDeEsperaServices   // esta parte sigue necesitando de reserva 
     {
         private static List<ListaDeEspera> _lista = new List<ListaDeEspera>();
         private static int _id = 1;
@@ -38,4 +38,4 @@ using Proyecto_Progra_II.Services.Interfaces;
             return _lista.OrderBy(x => x.FechaSolicitud).ToList();
         }
     } 
-} */
+} 

@@ -5,14 +5,7 @@ namespace Proyecto_Progra_II.Services
 {
     public class MesaServices : IMesaServices
     {
-        // 🔹 Estados simulados
-        private static List<EstadoMesa> _estados = new List<EstadoMesa>()
-        {
-            new EstadoMesa { Id = 1, Nombre = "Disponible" },
-            new EstadoMesa { Id = 2, Nombre = "Ocupada" },
-            new EstadoMesa { Id = 3, Nombre = "Bloqueada" },
-            new EstadoMesa { Id = 4, Nombre = "Mantenimiento" }
-        };
+        
 
         // 🔹 Mesas simuladas
         private static List<Mesa> _mesas = new List<Mesa>()
