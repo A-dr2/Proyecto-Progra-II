@@ -15,7 +15,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<MyAppDbContext>();
 builder.Services.AddScoped<IClienteServices, ClienteServices>();
 builder.Services.AddScoped<IReservaServices, ReservasServices>();    
-builder.Services.AddScoped<IListaDeEsperaServices, ListaDeEsperaServices>();
+builder.Services.AddScoped<IListaEsperaServices, ListaDeEsperaServices>();
 builder.Services.AddScoped<IEstadoMesaServices, EstadoMesaServices>();
 builder.Services.AddScoped<IMesasServices, MesasServices>();
 builder.Services.AddScoped<ITurnoServices, TurnoServices>();
