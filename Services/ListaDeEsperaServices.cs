@@ -1,31 +1,32 @@
-﻿using Proyecto_Progra_II.Entities;
+﻿
+using Proyecto_Progra_II.Entities;
 using Proyecto_Progra_II.Services.Interfaces;
 
 namespace Proyecto_Progra_II.Services
 {
-    public class ZonasServices : IZonasServices
+    public class ListaDeEsperaServices : IListaDeEsperaServices
     {
-        public Zona CreateZona(Zona zona)
+        public ListaDeEspera CreateListaDeEspera(ListaDeEspera listaDeEspera)
         {
             throw new NotImplementedException();
         }
 
-        public void DeleteZona(int id)
+        public void DeleteListaDeEspera(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Zona GetZonaById(int id)
+        public List<ListaDeEspera> GetListaDeEspera()
         {
             throw new NotImplementedException();
         }
 
-        public List<Zona> GetZonas()
+        public ListaDeEspera GetListaDeEsperaById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Zona UpdateZona(int id, Zona zona)
+        public ListaDeEspera UpdateListaDeEspera(int id, ListaDeEspera listaDeEspera)
         {
             throw new NotImplementedException();
         }

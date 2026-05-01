@@ -3,29 +3,29 @@ using Proyecto_Progra_II.Services.Interfaces;
 
 namespace Proyecto_Progra_II.Services
 {
-    public class ZonasServices : IZonasServices
+    public class TurnoServices : ITurnoServices
     {
-        public Zona CreateZona(Zona zona)
+        public Turno CreateTurno(Turno turno)
         {
             throw new NotImplementedException();
         }
 
-        public void DeleteZona(int id)
+        public void DeleteTurno(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Zona GetZonaById(int id)
+        public Turno GetTurnoById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Zona> GetZonas()
+        public List<Turno> GetTurnos()
         {
             throw new NotImplementedException();
         }
 
-        public Zona UpdateZona(int id, Zona zona)
+        public Turno UpdateTurno(int id, Turno turno)
         {
             throw new NotImplementedException();
         }

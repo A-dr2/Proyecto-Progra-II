@@ -1,3 +1,7 @@
+using Proyecto_Progra_II.MiDbContext;
+using Proyecto_Progra_II.Services;
+using Proyecto_Progra_II.Services.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +10,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<MyAppDbContext>();
+builder.Services.AddScoped<IClienteServices, ClienteServices>();
 
 var app = builder.Build();
 

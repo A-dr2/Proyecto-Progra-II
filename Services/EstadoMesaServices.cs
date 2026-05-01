@@ -3,29 +3,29 @@ using Proyecto_Progra_II.Services.Interfaces;
 
 namespace Proyecto_Progra_II.Services
 {
-    public class ZonasServices : IZonasServices
+    public class EstadoMesaServices : IEstadoMesaServices
     {
-        public Zona CreateZona(Zona zona)
+        public EstadoMesa CreateBloqueoMesa(EstadoMesa bloqueoMesa)
         {
             throw new NotImplementedException();
         }
 
-        public void DeleteZona(int id)
+        public void DeleteBloqueoMesa(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Zona GetZonaById(int id)
+        public List<EstadoMesa> GetAllBloqueoMesa()
         {
             throw new NotImplementedException();
         }
 
-        public List<Zona> GetZonas()
+        public EstadoMesa GetBloqueoMesaById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Zona UpdateZona(int id, Zona zona)
+        public EstadoMesa UpdateBloqueoMesa(int id, EstadoMesa bloqueoMesa)
         {
             throw new NotImplementedException();
         }

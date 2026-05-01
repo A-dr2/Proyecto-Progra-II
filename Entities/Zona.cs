@@ -1,10 +1,11 @@
 ﻿namespace Proyecto_Progra_II.Entities
 {
-    public class Zonas
+    public class Zona
     {
         public int Id { get; set; }
         public required string Nombre { get; set; }
 
-        public List<Mesas> Mesas { get; set; } = new List<Mesas>();
+        public List<Mesa> Mesas { get; set; } =  null!;
+
     }
 }
