@@ -4,13 +4,13 @@ namespace Proyecto_Progra_II.Services.Interfaces
 {
     public interface IMesaServices
     {
-        List<Mesa> GetAllMesas();
-        Mesa GetMesaById(int id);
-        Mesa CreateMesa(Mesa mesa);
-        Mesa UpdateMesa(int id, Mesa mesa);
+        public List<Mesa> GetAllMesas();
+        public Mesa GetMesaById(int id);
+        public Mesa CreateMesa(Mesa mesa);
+        public Mesa UpdateMesa(int id, Mesa mesa);
 
-        bool EstaDisponible(int mesaId);
+        public bool EstaDisponible(int mesaId);
 
-        void CambiarEstado(int mesaId, int estadoId, string? motivo = null);
+        public void CambiarEstado(int mesaId, int estadoId, string? motivo = null);
     }
 }
