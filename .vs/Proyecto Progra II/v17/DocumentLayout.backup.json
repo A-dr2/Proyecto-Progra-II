@@ -1,48 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|c:\\users\\lochi\\escritorio\\proyecto progra ii\\midbcontext\\myappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|solutionrelative:midbcontext\\myappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|c:\\users\\lochi\\escritorio\\proyecto progra ii\\myappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|solutionrelative:myappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|c:\\users\\lochi\\escritorio\\proyecto progra ii\\entities\\listadeespera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|solutionrelative:entities\\listadeespera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|c:\\users\\lochi\\escritorio\\proyecto progra ii\\services\\listadeesperaservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|solutionrelative:services\\listadeesperaservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|c:\\users\\lochi\\escritorio\\proyecto progra ii\\services\\interfaces\\ilistaesperaservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|solutionrelative:services\\interfaces\\ilistaesperaservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|c:\\users\\lochi\\escritorio\\proyecto progra ii\\proyecto progra ii.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|solutionrelative:proyecto progra ii.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|c:\\users\\lochi\\escritorio\\proyecto progra ii\\.gitattributes||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|solutionrelative:.gitattributes||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|c:\\users\\lochi\\escritorio\\proyecto progra ii\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|c:\\users\\lochi\\escritorio\\proyecto progra ii\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|c:\\users\\lochi\\escritorio\\proyecto progra ii\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -50,34 +9,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MyAppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\MiDbContext\\MyAppDbContext.cs",
-              "RelativeDocumentMoniker": "MiDbContext\\MyAppDbContext.cs",
-              "ToolTip": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\MiDbContext\\MyAppDbContext.cs*",
-              "RelativeToolTip": "MiDbContext\\MyAppDbContext.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T04:56:06.62Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MyAppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\MyAppDbContext.cs",
-              "RelativeDocumentMoniker": "MyAppDbContext.cs",
-              "ToolTip": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\MyAppDbContext.cs*",
-              "RelativeToolTip": "MyAppDbContext.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T04:55:22.897Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
@@ -103,32 +36,6 @@
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ListaDeEspera.cs",
-              "DocumentMoniker": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\Entities\\ListaDeEspera.cs",
-              "RelativeDocumentMoniker": "Entities\\ListaDeEspera.cs",
-              "ToolTip": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\Entities\\ListaDeEspera.cs",
-              "RelativeToolTip": "Entities\\ListaDeEspera.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T04:49:31.77Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IListaEsperaServices.cs",
-              "DocumentMoniker": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\Services\\Interfaces\\IListaEsperaServices.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IListaEsperaServices.cs",
-              "ToolTip": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\Services\\Interfaces\\IListaEsperaServices.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IListaEsperaServices.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T04:39:57.544Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
@@ -139,80 +46,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": ".gitattributes",
-              "DocumentMoniker": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\.gitattributes",
-              "RelativeDocumentMoniker": ".gitattributes",
-              "ToolTip": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\.gitattributes",
-              "RelativeToolTip": ".gitattributes",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-05-02T00:09:08.063Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\.gitignore",
-              "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\.gitignore",
-              "RelativeToolTip": ".gitignore",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-05-02T00:08:59.051Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-02T00:07:57.972Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ListaDeEsperaServices.cs",
-              "DocumentMoniker": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\Services\\ListaDeEsperaServices.cs",
-              "RelativeDocumentMoniker": "Services\\ListaDeEsperaServices.cs",
-              "ToolTip": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\Services\\ListaDeEsperaServices.cs",
-              "RelativeToolTip": "Services\\ListaDeEsperaServices.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-01T23:51:12.028Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Proyecto Progra II.http",
-              "DocumentMoniker": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\Proyecto Progra II.http",
-              "RelativeDocumentMoniker": "Proyecto Progra II.http",
-              "ToolTip": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\Proyecto Progra II.http",
-              "RelativeToolTip": "Proyecto Progra II.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2026-05-01T23:48:24.434Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T02:02:31.012Z"
             }
           ]
         }
