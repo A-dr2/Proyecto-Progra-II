@@ -1,41 +1,48 @@
 ﻿using Proyecto_Progra_II.Entities;
+using Proyecto_Progra_II.MiDbContext;
 using Proyecto_Progra_II.Services.Interfaces;
 
 namespace Proyecto_Progra_II.Services
 {
     public class ListaDeEsperaServices : IListaDeEsperaServices   // esta parte sigue necesitando de reserva 
     {
-        private static List<ListaDeEspera> _lista = new List<ListaDeEspera>();
-        private static int _id = 1;
+        private readonly MyAppDbContext _lista;
+
+        public ListaDeEsperaServices(MyAppDbContext context)
+        {
+            _lista = context;
+        }
+
 
         public ListaDeEspera AgregarALista(Reserva reserva)
         {
-            var nueva = new ListaDeEspera
+            var listaDeEspera = new ListaDeEspera
             {
-                Id = _id++,
-                Reserva = reserva,        
-                FechaSolicitud = DateTime.Now
+                FechaSolicitud = DateTime.Now,
+                Reserva = reserva
             };
-
-            _lista.Add(nueva);
-            return nueva;
+            _lista.ListasDeEspera.Add(listaDeEspera);
+            _lista.SaveChanges();
+            return listaDeEspera;
         }
 
         public Reserva? ObtenerSiguiente()
         {
-            if (_lista.Count == 0)
+            if (_lista.ListasDeEspera.Count == 0)
                 return null;
 
-            var primero = _lista.OrderBy(x => x.FechaSolicitud).First();
+            var primero = _lista.ListasDeEspera.OrderBy(x => x.FechaSolicitud).First();
 
-            _lista.Remove(primero);
+            _lista.ListasDeEspera.Remove(primero);
 
             return primero.Reserva;
         }
 
         public List<ListaDeEspera> GetListaDeEspera()
         {
-            return _lista.OrderBy(x => x.FechaSolicitud).ToList();
+            return _lista.ListasDeEspera.OrderBy(x => x.FechaSolicitud).ToList();
         }
+
+        
     } 
 } 

@@ -1,33 +1,64 @@
 ﻿using Proyecto_Progra_II.Entities;
+using Proyecto_Progra_II.MiDbContext;
 using Proyecto_Progra_II.Services.Interfaces;
 
 namespace Proyecto_Progra_II.Services
 {
     public class ReservasServices : IReservaServices
     {
+        private readonly MyAppDbContext _context;
+
+        public ReservasServices(MyAppDbContext context)
+        {
+            _context = context;
+        }
+
+        public bool VerificarDuplicado(Reserva reserva)
+        {
+            // => Funcion lambda
+            return _context.Reservas.Any(_reserva =>
+                _reserva.ClienteId == reserva.ClienteId &&
+                _reserva.Fecha == reserva.Fecha &&
+                _reserva.EstadoReserva != EstadoReserva.Cancelada);
+        }
+        //Antes de crear reserva // Evita duplicados
         public Reserva CreateReserva(Reserva reserva)
         {
-            throw new NotImplementedException();
+            if (VerificarDuplicado(reserva))
+                throw new InvalidOperationException("Reseva Duplicda");
+
+            _context.Reservas.Add(reserva);
+            _context.SaveChanges();
+            return reserva;
         }
 
         public void DeleteReserva(int id)
         {
-            throw new NotImplementedException();
+            var reserva = GetReservaById(id);
+            _context.Reservas.Remove(reserva);
+            _context.SaveChanges();
         }
 
         public Reserva GetReservaById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Reservas.FirstOrDefault(reserva => reserva.Id == id)
+                ?? throw new KeyNotFoundException("Reserva no encontrada");
         }
 
         public List<Reserva> GetReservas()
         {
-            throw new NotImplementedException();
+            return _context.Reservas.ToList();
         }
 
         public Reserva UpdateReserva(int id, Reserva reserva)
         {
-            throw new NotImplementedException();
+            var reservaExistente = GetReservaById(id);
+            reservaExistente.Fecha = reserva.Fecha;
+            reservaExistente.CantidadPersonas = reserva.CantidadPersonas;
+            reservaExistente.ClienteId = reserva.ClienteId;
+            reservaExistente.EstadoReserva = reserva.EstadoReserva;
+            _context.SaveChanges();
+            return reservaExistente;
         }
     }
 }

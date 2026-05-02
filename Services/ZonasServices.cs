@@ -1,33 +1,54 @@
 ﻿using Proyecto_Progra_II.Entities;
+using Proyecto_Progra_II.MiDbContext;
 using Proyecto_Progra_II.Services.Interfaces;
 
 namespace Proyecto_Progra_II.Services
 {
-    public class ZonasServices : IZonasServices
+    public class ZonaServices : IZonaServices
     {
-        public Zona CreateZona(Zona zona)
+        private readonly MyAppDbContext _context;
+
+        public ZonaServices(MyAppDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public void DeleteZona(int id)
+        // GET: todas las zonas
+        public List<Zona> GetAllZonas()
         {
-            throw new NotImplementedException();
+            return _context.Zonas.ToList();
         }
 
+        // GET: zona por id
         public Zona GetZonaById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Zonas.FirstOrDefault(zona => zona.Id == id)
+                ?? throw new KeyNotFoundException("Zona con no encontrada");
         }
 
-        public List<Zona> GetZonas()
+        // POST: crear zona
+        public Zona CreateZona(Zona zona)
         {
-            throw new NotImplementedException();
+            _context.Zonas.Add(zona);
+            _context.SaveChanges();
+            return zona;
         }
 
+        // PUT: actualizar zona
         public Zona UpdateZona(int id, Zona zona)
         {
-            throw new NotImplementedException();
+            var zonaExistente = GetZonaById(id);
+            zonaExistente.Nombre = zona.Nombre;
+            _context.SaveChanges();
+            return zonaExistente;
+        }
+
+        // DELETE: eliminar zona
+        public void DeleteZona(int id)
+        {
+            var zona = GetZonaById(id);
+            _context.Zonas.Remove(zona);
+            _context.SaveChanges();
         }
     }
 }
