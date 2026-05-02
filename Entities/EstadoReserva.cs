@@ -1,9 +1,8 @@
 ﻿namespace Proyecto_Progra_II.Entities
 {
-    public enum EstadoReserva
+    public class EstadoReserva
     {
-        Activa,
-        Cancelada,
-        Pendiente
+        public int Id { get; set; }
+        public required string Nombre { get; set; }
     }
 }
