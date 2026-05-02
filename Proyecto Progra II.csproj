@@ -8,9 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Dtos\**" />
     <Compile Remove="MiDbContext\**" />
+    <Content Remove="Dtos\**" />
     <Content Remove="MiDbContext\**" />
+    <EmbeddedResource Remove="Dtos\**" />
     <EmbeddedResource Remove="MiDbContext\**" />
+    <None Remove="Dtos\**" />
     <None Remove="MiDbContext\**" />
   </ItemGroup>
 
@@ -21,7 +25,6 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Dtos\" />
   </ItemGroup>
 
 </Project>

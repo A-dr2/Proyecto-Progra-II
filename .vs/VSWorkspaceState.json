@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Controllers",
+    "\\Entities",
+    "\\MiDbContext",
+    "\\Properties",
+    "\\Services"
+  ],
+  "SelectedNode": "\\Entities\\Zona.cs",
+  "PreviewInSolutionExplorer": false
+}
