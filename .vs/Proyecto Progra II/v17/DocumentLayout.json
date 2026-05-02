@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|c:\\users\\lochi\\escritorio\\proyecto progra ii\\controllers\\listadeesperacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|solutionrelative:controllers\\listadeesperacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|c:\\users\\lochi\\escritorio\\proyecto progra ii\\controllers\\estadomesacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|solutionrelative:controllers\\estadomesacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|c:\\users\\lochi\\escritorio\\proyecto progra ii\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -32,16 +45,47 @@
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ListaDeEsperaController.cs",
+              "DocumentMoniker": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\Controllers\\ListaDeEsperaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ListaDeEsperaController.cs",
+              "ToolTip": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\Controllers\\ListaDeEsperaController.cs",
+              "RelativeToolTip": "Controllers\\ListaDeEsperaController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T22:33:04.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EstadoMesaController.cs",
+              "DocumentMoniker": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\Controllers\\EstadoMesaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EstadoMesaController.cs",
+              "ToolTip": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\Controllers\\EstadoMesaController.cs",
+              "RelativeToolTip": "Controllers\\EstadoMesaController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T22:33:03.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-05-02T22:33:01.206Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",

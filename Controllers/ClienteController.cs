@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Proyecto_Progra_II.Entities;
 using Proyecto_Progra_II.Services.Interfaces;
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Proyecto_Progra_II.Controllers
 {
@@ -10,49 +9,52 @@ namespace Proyecto_Progra_II.Controllers
     public class ClienteController : ControllerBase
     {
         private readonly IClienteServices _clienteServices;
+
         public ClienteController(IClienteServices clienteServices)
         {
             _clienteServices = clienteServices;
         }
 
-        // GET: api/<ClienteController>
+        // GET: api/Cliente
         [HttpGet]
-        public IEnumerable<Cliente> Get()
+        public IEnumerable<ClienteDto> Get()
         {
-            var result = _clienteServices.GetUsuarios();
-            return result;
+            return _clienteServices.GetAll();
         }
 
-        // GET api/<ClienteController>/5
+        // GET: api/Cliente/reservas
+        [HttpGet("reservas")]
+        public IEnumerable<ClienteReservasDto> GetWithReservas()
+        {
+            return _clienteServices.GetAllWithReservas();
+        }
+
+        // GET: api/Cliente/5
         [HttpGet("{id}")]
         public Cliente Get(int id)
         {
-            var result = _clienteServices.GetUsuarioById(id);
-            return result;
+            return _clienteServices.GetById(id);
         }
 
-        // POST api/<ClienteController>
+        // POST: api/Cliente
         [HttpPost]
-        public Cliente Post([FromBody] Cliente NewCliente)
+        public Cliente Post([FromBody] Cliente cliente)
         {
-
-            var result = _clienteServices.CreateUsuario(NewCliente);
-            return result;
+            return _clienteServices.Create(cliente);
         }
 
-        // PUT api/<ClienteController>/5
+        // PUT: api/Cliente/5
         [HttpPut("{id}")]
-        public Cliente Put(int id, [FromBody] Cliente NewCliente)
+        public Cliente Put(int id, [FromBody] Cliente cliente)
         {
-            var result = _clienteServices.UpdateUsuario(id, NewCliente);
-            return result;
+            return _clienteServices.Update(id, cliente);
         }
 
-        // DELETE api/<ClienteController>/5
+        // DELETE: api/Cliente/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _clienteServices.DeleteUsuario(id);
+            _clienteServices.Delete(id);
         }
     }
 }

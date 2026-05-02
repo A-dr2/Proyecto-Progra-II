@@ -1,33 +1,28 @@
 ﻿using Proyecto_Progra_II.Entities;
+using Proyecto_Progra_II.MiDbContext;
 using Proyecto_Progra_II.Services.Interfaces;
 
 namespace Proyecto_Progra_II.Services
 {
     public class TurnoServices : ITurnoServices
     {
-        public Turno CreateTurno(Turno turno)
+        private readonly MyAppDbContext _context;
+
+        public TurnoServices(MyAppDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+            _context.Database.EnsureCreated();
         }
 
-        public void DeleteTurno(int id)
+        public List<Turno> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Turnos.ToList();
         }
 
-        public Turno GetTurnoById(int id)
+        public Turno GetById(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public List<Turno> GetTurnos()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Turno UpdateTurno(int id, Turno turno)
-        {
-            throw new NotImplementedException();
+            return _context.Turnos.FirstOrDefault(t => t.Id == id)
+                ?? throw new KeyNotFoundException("Turno no encontrado");
         }
     }
 }

@@ -5,6 +5,12 @@
         public int Id { get; set; }
         public DateTime HoraInicio { get; set; }
         public DateTime HoraFin { get; set; }
+    }
 
+    public class TurnoDto
+    {
+        public int Id { get; set; }
+        public DateTime HoraInicio { get; set; }
+        public DateTime HoraFin { get; set; }
     }
 }

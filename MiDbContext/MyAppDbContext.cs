@@ -29,18 +29,12 @@ namespace Proyecto_Progra_II.MiDbContext
 
             );
             modelBuilder.Entity<Mesa>().HasData(
-            new Mesa { Id = 1, Capacidad = 4, ZonaId = 1, EstadoMesaId = 1 },
-            new Mesa { Id = 2, Capacidad = 4, ZonaId = 1, EstadoMesaId = 2 },
-            new Mesa { Id = 3, Capacidad = 4, ZonaId = 1, EstadoMesaId = 3 },
-            new Mesa { Id = 4, Capacidad = 4, ZonaId = 1 },
-            new Mesa { Id = 5, Capacidad = 4, ZonaId = 2 },
-            new Mesa { Id = 6, Capacidad = 4, ZonaId = 2 },
-            new Mesa { Id = 7, Capacidad = 4, ZonaId = 2 },
-            new Mesa { Id = 8, Capacidad = 4, ZonaId = 2 },
-            new Mesa { Id = 9, Capacidad = 4, ZonaId = 3 },
-            new Mesa { Id = 10, Capacidad = 4, ZonaId = 3 },
-            new Mesa { Id = 11, Capacidad = 4, ZonaId = 3 },
-            new Mesa { Id = 12, Capacidad = 4, ZonaId = 3 }
+    new Mesa { Id = 1, Capacidad = 4, ZonaId = 1, EstadoMesaId = 1 },
+    new Mesa { Id = 2, Capacidad = 4, ZonaId = 1, EstadoMesaId = 2 },
+    new Mesa { Id = 3, Capacidad = 4, ZonaId = 1, EstadoMesaId = 3 },
+    new Mesa { Id = 4, Capacidad = 4, ZonaId = 1 }
+    // ... resto igual
+
 
             );
             modelBuilder.Entity<Zona>().HasData(
@@ -49,11 +43,11 @@ namespace Proyecto_Progra_II.MiDbContext
                 new Zona { Id = 3, Nombre = "Sala VIP" }
                 );
             modelBuilder.Entity<EstadoMesa>().HasData(
-                new EstadoMesa { Id = 0, TipoBloqueo = TipoBloqueo.Disponible },
-               new EstadoMesa { Id = 1, TipoBloqueo = TipoBloqueo.Mantenimiento },
-               new EstadoMesa { Id = 2, TipoBloqueo = TipoBloqueo.EventoEspecial },
-               new EstadoMesa { Id = 3, TipoBloqueo = TipoBloqueo.Reserva }
-               );
+     new EstadoMesa { Id = 1, TipoBloqueo = TipoBloqueo.Disponible },
+     new EstadoMesa { Id = 2, TipoBloqueo = TipoBloqueo.Mantenimiento },
+     new EstadoMesa { Id = 3, TipoBloqueo = TipoBloqueo.EventoEspecial },
+     new EstadoMesa { Id = 4, TipoBloqueo = TipoBloqueo.Reserva }
+ );
             modelBuilder.Entity<Reserva>().HasData(
                new Reserva { Id = 1, ClienteId = 1, CantidadPersonas = 4, Fecha = DateTime.Now/*Esto hay que ponerlo en un rango de horas (23,0,2,1) o algo así*/},
                new Reserva { Id = 2, ClienteId = 2, CantidadPersonas = 2, Fecha = new DateTime(2023, 10, 25, 18, 0, 0) }

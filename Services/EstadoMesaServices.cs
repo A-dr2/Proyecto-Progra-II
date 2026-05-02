@@ -1,70 +1,48 @@
 ﻿using Proyecto_Progra_II.Entities;
-using Proyecto_Progra_II.Services.Interfaces;
 using Proyecto_Progra_II.MiDbContext;
+using Proyecto_Progra_II.Services.Interfaces;
 
 namespace Proyecto_Progra_II.Services
 {
     public class EstadoMesaServices : IEstadoMesaServices
     {
-
         private readonly MyAppDbContext _context;
 
         public EstadoMesaServices(MyAppDbContext context)
         {
             _context = context;
+            _context.Database.EnsureCreated();
         }
 
-        public EstadoMesa CreateBloqueoMesa(EstadoMesa bloqueoMesa)
-        {
-
-            if (bloqueoMesa.FechaFin <= bloqueoMesa.FechaInicio)
-                throw new ArgumentException("FechaFin debe ser posterior a FechaInicio.");
-
-            _context.EstadosMesa.Add(bloqueoMesa);
-            _context.SaveChanges();
-            return bloqueoMesa;
-        }
-
-        public void DeleteBloqueoMesa(int id)
-        {
-            var bloqueo = _context.EstadosMesa.Find(id);
-
-            if (bloqueo is null)
-                throw new KeyNotFoundException("No existe un bloqueo con Id {id}.");
-
-            _context.EstadosMesa.Remove(bloqueo);
-            _context.SaveChanges();
-        }
-
-        public List<EstadoMesa> GetAllBloqueoMesa()
+        public List<EstadoMesa> GetAll()
         {
             return _context.EstadosMesa.ToList();
         }
 
-        public EstadoMesa GetBloqueoMesaById(int id)
+        public List<EstadoMesa> GetBloqueosActuales()
         {
-            var bloqueo = _context.EstadosMesa.Find(id);
-
-            if (bloqueo is null)
-                throw new KeyNotFoundException("No existe un bloqueo con Id {id}.");
-
-            return bloqueo;
+            var ahora = DateTime.Now;
+            return _context.EstadosMesa
+                .Where(e =>
+                    e.TipoBloqueo != TipoBloqueo.Disponible &&
+                    e.FechaInicio.HasValue &&
+                    e.FechaFin.HasValue &&
+                    e.FechaInicio.Value <= ahora &&
+                    e.FechaFin.Value >= ahora)
+                .ToList();
         }
 
-        public EstadoMesa UpdateBloqueoMesa(int id, EstadoMesa bloqueoMesa)
+        public EstadoMesa GetById(int id)
         {
-            var existente = _context.EstadosMesa.Find(id);
+            return _context.EstadosMesa.FirstOrDefault(e => e.Id == id)
+                ?? throw new KeyNotFoundException("Estado no encontrado");
+        }
 
-            if (existente is null)
-                throw new KeyNotFoundException("No existe un bloqueo con Id {id}.");
-
-
-            existente.Motivo = bloqueoMesa.Motivo;
-            existente.FechaInicio = bloqueoMesa.FechaInicio;
-            existente.FechaFin = bloqueoMesa.FechaFin;
-
+        public EstadoMesa Create(EstadoMesa estado)
+        {
+            _context.EstadosMesa.Add(estado);
             _context.SaveChanges();
-            return existente;
+            return estado;
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿
-using Proyecto_Progra_II.Entities;
+﻿using Proyecto_Progra_II.Entities;
 using Proyecto_Progra_II.MiDbContext;
 using Proyecto_Progra_II.Services.Interfaces;
 
@@ -7,42 +6,73 @@ namespace Proyecto_Progra_II.Services
 {
     public class ClienteServices : IClienteServices
     {
-       private readonly MyAppDbContext _context;
+        private readonly MyAppDbContext _context;
+
         public ClienteServices(MyAppDbContext context)
         {
             _context = context;
+            _context.Database.EnsureCreated();
         }
-        public Cliente CreateUsuario (Cliente cliente)
+
+        public List<ClienteDto> GetAll()
         {
-           _context.Clientes.Add(cliente);
+            return _context.Clientes
+                .Select(c => new ClienteDto
+                {
+                    Id = c.Id,
+                    Nombre = c.Nombre,
+                    Telefono = c.Telefono,
+                    Email = c.Email
+                }).ToList();
+        }
+
+        public List<ClienteReservasDto> GetAllWithReservas()
+        {
+            return _context.Clientes
+                .Select(c => new ClienteReservasDto
+                {
+                    Nombre = c.Nombre,
+                    Reservas = c.Reservas
+                        .OrderBy(r => r.Fecha)
+                        .Select(r => new ReservaDto
+                        {
+                            Id = r.Id,
+                            Fecha = r.Fecha,
+                            CantidadPersonas = r.CantidadPersonas,
+                            ClienteId = r.ClienteId,
+                            EstadoReserva = r.EstadoReserva
+                        }).ToList()
+                }).ToList();
+        }
+
+        public Cliente GetById(int id)
+        {
+            return _context.Clientes.FirstOrDefault(c => c.Id == id)
+                ?? throw new KeyNotFoundException("Cliente no encontrado");
+        }
+
+        public Cliente Create(Cliente cliente)
+        {
+            _context.Clientes.Add(cliente);
             _context.SaveChanges();
             return cliente;
-
         }
 
-
-
- 
-
-
-        public void DeleteUsuario(int id)
+        public Cliente Update(int id, Cliente cliente)
         {
-            throw new NotImplementedException();
+            var existente = GetById(id);
+            existente.Nombre = cliente.Nombre;
+            existente.Telefono = cliente.Telefono;
+            existente.Email = cliente.Email;
+            _context.SaveChanges();
+            return existente;
         }
 
-        public Cliente GetUsuarioById(int id)
+        public void Delete(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public List<Cliente> GetUsuarios()
-        {
-            return _context.Clientes.ToList();
-        }
-
-        public Cliente UpdateUsuario(int id, Cliente usuario)
-        {
-            throw new NotImplementedException();
+            var cliente = GetById(id);
+            _context.Clientes.Remove(cliente);
+            _context.SaveChanges();
         }
     }
 }

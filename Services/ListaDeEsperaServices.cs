@@ -2,50 +2,61 @@
 using Proyecto_Progra_II.MiDbContext;
 using Proyecto_Progra_II.Services.Interfaces;
 
- namespace Proyecto_Progra_II.Services
+namespace Proyecto_Progra_II.Services
 {
-    public class ListaDeEsperaServices : IListaDeEsperaServices   // esta parte sigue necesitando de reserva 
+    public class ListaDeEsperaServices : IListaDeEsperaServices
     {
-        private readonly MyAppDbContext _lista;
+        private readonly MyAppDbContext _context;
 
         public ListaDeEsperaServices(MyAppDbContext context)
         {
-            _lista = context;
+            _context = context;
+            _context.Database.EnsureCreated();
         }
 
+        public List<ListaDeEspera> GetAll()
+        {
+            return _context.ListasDeEspera
+                .OrderBy(l => l.FechaSolicitud)
+                .ToList();
+        }
 
         public ListaDeEspera AgregarALista(Reserva reserva)
         {
-            var listaDeEspera = new ListaDeEspera
+            var lista = new ListaDeEspera
             {
+                ClienteId = reserva.ClienteId,
+                CantidadPersonas = reserva.CantidadPersonas,
                 FechaSolicitud = DateTime.Now,
-                Reserva = reserva
+                Estado = EstadoListaEspera.Esperando
             };
-            _lista.ListasDeEspera.Add(listaDeEspera);
-            _lista.SaveChanges();
-            return listaDeEspera;
+
+            _context.ListasDeEspera.Add(lista);
+            _context.SaveChanges();
+            return lista;
         }
 
         public Reserva? ObtenerSiguiente()
         {
-            var siguiente = _lista.ListasDeEspera
-                .OrderBy(x => x.FechaSolicitud)
+            var siguiente = _context.ListasDeEspera
+                .Where(l => l.Estado == EstadoListaEspera.Esperando)
+                .OrderBy(l => l.FechaSolicitud)
                 .FirstOrDefault();
-            if (siguiente != null)
+
+            if (siguiente == null) return null;
+
+            siguiente.Estado = EstadoListaEspera.Finalizado;
+
+            var reserva = new Reserva
             {
-                _lista.ListasDeEspera.Remove(siguiente);
-                _lista.SaveChanges();
-                return siguiente.Reserva;
-            }
-            return null;
+                ClienteId = siguiente.ClienteId,
+                CantidadPersonas = siguiente.CantidadPersonas,
+                Fecha = DateTime.Now,
+                EstadoReserva = EstadoReserva.Pendiente
+            };
 
+            _context.SaveChanges();
+            return reserva;
         }
-
-        public List<ListaDeEspera> GetListaDeEspera()
-        {
-            return _lista.ListasDeEspera.OrderBy(x => x.FechaSolicitud).ToList();
-        }
-
-        
-    } 
-} 
+    }
+}

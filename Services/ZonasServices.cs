@@ -4,51 +4,50 @@ using Proyecto_Progra_II.Services.Interfaces;
 
 namespace Proyecto_Progra_II.Services
 {
-    public class ZonaServices : IZonasServices
+    public class ZonasServices : IZonasServices
     {
         private readonly MyAppDbContext _context;
 
-        public ZonaServices(MyAppDbContext context)
+        public ZonasServices(MyAppDbContext context)
         {
             _context = context;
+            _context.Database.EnsureCreated();
         }
 
-        // GET: todas las zonas
-        public List<Zona> GetZonas()
+        public List<ZonaDto> GetAll()
         {
-            return _context.Zonas.ToList();
+            return _context.Zonas
+                .Select(z => new ZonaDto { Id = z.Id, Nombre = z.Nombre })
+                .ToList();
         }
 
-        // GET: zona por id
-        public Zona GetZonaById(int id)
+        public List<ZonaMesasDto> GetAllWithMesas()
         {
-            return _context.Zonas.FirstOrDefault(zona => zona.Id == id)
-                ?? throw new KeyNotFoundException("Zona con no encontrada");
+            return _context.Zonas
+                .Select(z => new ZonaMesasDto
+                {
+                    Nombre = z.Nombre,
+                    Mesas = z.Mesas.Select(m => new MesaDto
+                    {
+                        Id = m.Id,
+                        Capacidad = m.Capacidad,
+                        ZonaId = m.ZonaId,
+                        EstadoMesaId = m.EstadoMesaId
+                    }).ToList()
+                }).ToList();
         }
 
-        // POST: crear zona
-        public Zona CreateZona(Zona zona)
+        public Zona GetById(int id)
+        {
+            return _context.Zonas.FirstOrDefault(z => z.Id == id)
+                ?? throw new KeyNotFoundException("Zona no encontrada");
+        }
+
+        public Zona Create(Zona zona)
         {
             _context.Zonas.Add(zona);
             _context.SaveChanges();
             return zona;
-        }
-
-        // PUT: actualizar zona
-        public Zona UpdateZona(int id, Zona zona)
-        {
-            var zonaExistente = GetZonaById(id);
-            zonaExistente.Nombre = zona.Nombre;
-            _context.SaveChanges();
-            return zonaExistente;
-        }
-
-        // DELETE: eliminar zona
-        public void DeleteZona(int id)
-        {
-            var zona = GetZonaById(id);
-            _context.Zonas.Remove(zona);
-            _context.SaveChanges();
         }
     }
 }

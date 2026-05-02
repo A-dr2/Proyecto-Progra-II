@@ -4,10 +4,9 @@ namespace Proyecto_Progra_II.Services.Interfaces
 {
     public interface IZonasServices
     {
-        public List<Zona> GetZonas();
-        public Zona GetZonaById(int id);
-        public Zona CreateZona(Zona zona);
-        public Zona UpdateZona(int id, Zona zona);
-        public void DeleteZona(int id);
+        public List<ZonaDto> GetAll();
+        public List<ZonaMesasDto> GetAllWithMesas();
+        public Zona GetById(int id);
+        public Zona Create(Zona zona);
     }
 }

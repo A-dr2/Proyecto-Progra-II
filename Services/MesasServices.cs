@@ -1,79 +1,64 @@
-﻿using Proyecto_Progra_II.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Proyecto_Progra_II.Entities;
 using Proyecto_Progra_II.MiDbContext;
 using Proyecto_Progra_II.Services.Interfaces;
 
 namespace Proyecto_Progra_II.Services
 {
-    public class MesaServices : IMesaServices
+    public class MesasServices : IMesaServices
     {
-        private readonly MyAppDbContext _mesas;
-        private readonly IEstadoMesaServices _estadoMesaServices;
+        private readonly MyAppDbContext _context;
 
-        public MesaServices(MyAppDbContext mesa, IEstadoMesaServices estadoMesaServices)
+        public MesasServices(MyAppDbContext context)
         {
-            _mesas = mesa;
-            _estadoMesaServices = estadoMesaServices;
+            _context = context;
+            _context.Database.EnsureCreated();
         }
 
-        // 🔹 GET ALL
-        public List<Mesa> GetAllMesas()
+        public List<Mesa> GetAll()
         {
-            return _mesas.Mesas.ToList();
+            return _context.Mesas
+                .Include(m => m.Zona)
+                .Include(m => m.EstadoMesa)
+                .ToList();
         }
 
-        // 🔹 GET BY ID
-        public Mesa GetMesaById(int id)
+        public Mesa GetById(int id)
         {
-            var mesa = _mesas.Mesas.FirstOrDefault(m => m.Id == id);
+            return _context.Mesas
+                .Include(m => m.Zona)
+                .Include(m => m.EstadoMesa)
+                .FirstOrDefault(m => m.Id == id)
+                ?? throw new KeyNotFoundException("Mesa no encontrada");
+        }
 
-            if (mesa == null)
-                throw new Exception("Mesa no encontrada");
+        public List<Mesa> GetByZona(int zonaId)
+        {
+            return _context.Mesas
+                .Include(m => m.Zona)
+                .Include(m => m.EstadoMesa)
+                .Where(m => m.ZonaId == zonaId)
+                .ToList();
+        }
 
+        public Mesa Create(Mesa mesa)
+        {
+            _context.Mesas.Add(mesa);
+            _context.SaveChanges();
             return mesa;
         }
 
-        // 🔹 CREATE
-        public Mesa CrearMesa(Mesa mesa)
-        {
-            mesa.EstadoMesaId = 1; // Disponible por defecto
-            _mesas.Mesas.Add(mesa);
-            _mesas.SaveChanges();
-
-            return mesa;
-        }
-
-
-
-        // 🔹 DISPONIBILIDAD
         public bool EstaDisponible(int mesaId)
         {
-            var mesa = GetMesaById(mesaId);
-
-            // Estado lógico correcto usando enum
-            if (mesa.EstadoMesaId != (int)TipoBloqueo.Disponible)
-                return false;
-
-            var ahora = DateTime.Now;
-
-            var tieneBloqueoActivo = _mesas.EstadosMesa.Any(b =>
-                b.MesaId == mesaId &&
-                b.FechaInicio.HasValue &&
-                b.FechaFin.HasValue &&
-                b.FechaInicio.Value <= ahora &&
-                b.FechaFin.Value >= ahora
-            );
-
-            return !tieneBloqueoActivo;
+            var mesa = GetById(mesaId);
+            return mesa.EstadoMesa?.TipoBloqueo == TipoBloqueo.Disponible;
         }
 
-        // 🔹 CAMBIAR ESTADO (con mensaje opcional)
-        public void CambiarEstado(int mesaId, int estadoId, string? motivo = null)
+        public void CambiarEstado(int mesaId, int estadoId)
         {
-            var mesa = GetMesaById(mesaId);
-
+            var mesa = GetById(mesaId);
             mesa.EstadoMesaId = estadoId;
-
-            _mesas.SaveChanges();
+            _context.SaveChanges();
         }
     }
 }
