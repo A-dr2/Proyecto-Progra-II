@@ -49,20 +49,18 @@ namespace Proyecto_Progra_II.Services
         {
             var mesa = GetMesaById(mesaId);
 
-            // 1. Estado lógico
-            if (mesa.EstadoMesaId != 1)
+            // Estado lógico correcto usando enum
+            if (mesa.EstadoMesaId != (int)TipoBloqueo.Disponible)
                 return false;
 
-            // 2. Bloqueos por tiempo
             var ahora = DateTime.Now;
 
-            var bloqueos = _mesas.EstadosMesa
-                .Where(b => b.MesaId == mesaId)
-                .ToList();
-
-            var tieneBloqueoActivo = bloqueos.Any(b =>
-                b.FechaInicio <= ahora &&
-                b.FechaFin >= ahora
+            var tieneBloqueoActivo = _mesas.EstadosMesa.Any(b =>
+                b.MesaId == mesaId &&
+                b.FechaInicio.HasValue &&
+                b.FechaFin.HasValue &&
+                b.FechaInicio.Value <= ahora &&
+                b.FechaFin.Value >= ahora
             );
 
             return !tieneBloqueoActivo;

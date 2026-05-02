@@ -60,7 +60,7 @@ namespace Proyecto_Progra_II.Services
             }
             else
             {
-                // 🔥 AQUÍ usas el service de lista de espera
+                //añade a lista de espera
                 _listaEsperaService.AgregarALista(reserva);
                 return null;
             }
