@@ -4,10 +4,10 @@ namespace Proyecto_Progra_II.Services.Interfaces
 {
     public interface IReservaServices
     {
-        public List<Reserva> GetReservas();
-        public Reserva GetReservaById(int id);
-        public Reserva CreateReserva(Reserva reserva);
-        public Reserva UpdateReserva(int id, Reserva reserva);
+        public List<Reservas> GetReservas();
+        public Reservas GetReservaById(int id);
+        public Reservas CreateReserva(Reservas reserva);
+        public Reservas UpdateReserva(int id, Reservas reserva);
         public void DeleteReserva(int id);
     }
 }
