@@ -19,6 +19,7 @@ builder.Services.AddScoped<IListaEsperaServices, ListaDeEsperaServices>();
 builder.Services.AddScoped<IEstadoMesaServices, EstadoMesaServices>(); 
 builder.Services.AddScoped<IMesasServices, MesasServices>();
 builder.Services.AddScoped<ITurnoServices, TurnoServices>();
+builder.Services.AddScoped<IZonasServices, ZonasServices>();
 
 var app = builder.Build();
 
