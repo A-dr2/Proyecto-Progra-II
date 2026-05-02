@@ -1,7 +1,7 @@
 ﻿using Proyecto_Progra_II.Entities;
 using Proyecto_Progra_II.Services.Interfaces;
 
-namespace Proyecto_Progra_II.Services
+ namespace Proyecto_Progra_II.Services
 {
     public class ListaDeESperaServices : IListaEsperaServices
     {
