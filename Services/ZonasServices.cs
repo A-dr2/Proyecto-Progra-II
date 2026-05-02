@@ -4,7 +4,7 @@ using Proyecto_Progra_II.Services.Interfaces;
 
 namespace Proyecto_Progra_II.Services
 {
-    public class ZonaServices : IZonaServices
+    public class ZonaServices : IZonasServices
     {
         private readonly MyAppDbContext _context;
 
@@ -14,7 +14,7 @@ namespace Proyecto_Progra_II.Services
         }
 
         // GET: todas las zonas
-        public List<Zona> GetAllZonas()
+        public List<Zona> GetZonas()
         {
             return _context.Zonas.ToList();
         }

@@ -1,40 +1,30 @@
 ﻿using Proyecto_Progra_II.Entities;
+using Proyecto_Progra_II.MiDbContext;
 using Proyecto_Progra_II.Services.Interfaces;
 
 namespace Proyecto_Progra_II.Services
 {
     public class MesaServices : IMesaServices
     {
-        
+        private readonly MyAppDbContext _mesas;
+        private readonly IEstadoMesaServices _estadoMesaServices;
 
-        // 🔹 Mesas simuladas
-        private static List<Mesa> _mesas = new List<Mesa>()
+        public MesaServices(MyAppDbContext mesa, IEstadoMesaServices estadoMesaServices)
         {
-            new Mesa
-            {
-                Id = 1, Capacidad = 4, ZonaId = 1,
-                EstadoMesaId = 1,
-                EstadoMesa = _estados.First(e => e.Id == 1)
-            },
-            new Mesa
-            {
-                Id = 2, Capacidad = 2, ZonaId = 1,
-                EstadoMesaId = 3,
-                EstadoMesa = _estados.First(e => e.Id == 3),
-                ObservacionEstado = "Pata rota"
-            }
-        };
+            _mesas = mesa;
+            _estadoMesaServices = estadoMesaServices;
+        }
 
         // 🔹 GET ALL
         public List<Mesa> GetAllMesas()
         {
-            return _mesas;
+            return _mesas.Mesas.ToList();
         }
 
         // 🔹 GET BY ID
         public Mesa GetMesaById(int id)
         {
-            var mesa = _mesas.FirstOrDefault(m => m.Id == id);
+            var mesa = _mesas.Mesas.FirstOrDefault(m => m.Id == id);
 
             if (mesa == null)
                 throw new Exception("Mesa no encontrada");
@@ -43,37 +33,39 @@ namespace Proyecto_Progra_II.Services
         }
 
         // 🔹 CREATE
-        public Mesa CreateMesa(Mesa mesa)
+        public Mesa CrearMesa(Mesa mesa)
         {
-            mesa.Id = _mesas.Count + 1;
+            mesa.EstadoMesaId = 1; // Disponible por defecto
+            _mesas.Mesas.Add(mesa);
+            _mesas.SaveChanges();
 
-            // por defecto disponible
-            var estado = _estados.First(e => e.Id == 1);
-
-            mesa.EstadoMesaId = estado.Id;
-            mesa.EstadoMesa = estado;
-
-            _mesas.Add(mesa);
             return mesa;
         }
 
-        // 🔹 UPDATE (solo datos básicos)
-        public Mesa UpdateMesa(int id, Mesa mesa)
-        {
-            var existente = GetMesaById(id);
 
-            existente.Capacidad = mesa.Capacidad;
-            existente.ZonaId = mesa.ZonaId;
-
-            return existente;
-        }
 
         // 🔹 DISPONIBILIDAD
         public bool EstaDisponible(int mesaId)
         {
             var mesa = GetMesaById(mesaId);
 
-            return mesa.EstadoMesaId == 1; // Disponible
+            // 1. Estado lógico
+            if (mesa.EstadoMesaId != 1)
+                return false;
+
+            // 2. Bloqueos por tiempo
+            var ahora = DateTime.Now;
+
+            var bloqueos = _mesas.EstadosMesa
+                .Where(b => b.MesaId == mesaId)
+                .ToList();
+
+            var tieneBloqueoActivo = bloqueos.Any(b =>
+                b.FechaInicio <= ahora &&
+                b.FechaFin >= ahora
+            );
+
+            return !tieneBloqueoActivo;
         }
 
         // 🔹 CAMBIAR ESTADO (con mensaje opcional)
@@ -81,15 +73,9 @@ namespace Proyecto_Progra_II.Services
         {
             var mesa = GetMesaById(mesaId);
 
-            var estado = _estados.FirstOrDefault(e => e.Id == estadoId);
+            mesa.EstadoMesaId = estadoId;
 
-            if (estado == null)
-                throw new Exception("Estado no válido");
-
-            mesa.EstadoMesaId = estado.Id;
-            mesa.EstadoMesa = estado;
-
-            mesa.ObservacionEstado = motivo;
+            _mesas.SaveChanges();
         }
     }
 }

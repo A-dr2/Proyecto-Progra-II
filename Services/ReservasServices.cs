@@ -8,9 +8,12 @@ namespace Proyecto_Progra_II.Services
     {
         private readonly MyAppDbContext _context;
 
-        public ReservasServices(MyAppDbContext context)
+        private readonly IListaDeEsperaServices _listaEsperaService;
+
+        public ReservasServices(MyAppDbContext context, IListaDeEsperaServices listaEsperaService)
         {
             _context = context;
+            _listaEsperaService = listaEsperaService;
         }
 
         public bool VerificarDuplicado(Reserva reserva)
@@ -21,15 +24,46 @@ namespace Proyecto_Progra_II.Services
                 _reserva.Fecha == reserva.Fecha &&
                 _reserva.EstadoReserva != EstadoReserva.Cancelada);
         }
+        private bool VerificarDisponibilidad(Reserva reserva)
+        {
+            int totalMesas = _context.Mesas.Count();
+
+            int reservasEnEseMomento = _context.Reservas
+                .Count(r => r.Fecha == reserva.Fecha &&
+                            r.EstadoReserva != EstadoReserva.Cancelada);
+
+            return reservasEnEseMomento < totalMesas;
+        }
+        public void LiberarCupo()
+        {
+            var siguienteReserva = _listaEsperaService.ObtenerSiguiente();
+
+            if (siguienteReserva != null)
+            {
+                _context.Reservas.Add(siguienteReserva);
+                _context.SaveChanges();
+            }
+        }
         //Antes de crear reserva // Evita duplicados
-        public Reserva CreateReserva(Reserva reserva)
+        public Reserva? CrearReserva(Reserva reserva)
         {
             if (VerificarDuplicado(reserva))
-                throw new InvalidOperationException("Reseva Duplicda");
+                throw new InvalidOperationException("Reserva Duplicada");
 
-            _context.Reservas.Add(reserva);
-            _context.SaveChanges();
-            return reserva;
+            bool hayDisponibilidad = VerificarDisponibilidad(reserva);
+
+            if (hayDisponibilidad)
+            {
+                _context.Reservas.Add(reserva);
+                _context.SaveChanges();
+                return reserva;
+            }
+            else
+            {
+                // 🔥 AQUÍ usas el service de lista de espera
+                _listaEsperaService.AgregarALista(reserva);
+                return null;
+            }
         }
 
         public void DeleteReserva(int id)
@@ -60,5 +94,6 @@ namespace Proyecto_Progra_II.Services
             _context.SaveChanges();
             return reservaExistente;
         }
+
     }
 }

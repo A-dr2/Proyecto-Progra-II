@@ -28,14 +28,17 @@ namespace Proyecto_Progra_II.Services
 
         public Reserva? ObtenerSiguiente()
         {
-            if (_lista.ListasDeEspera.Count == 0)
-                return null;
+            var siguiente = _lista.ListasDeEspera
+                .OrderBy(x => x.FechaSolicitud)
+                .FirstOrDefault();
+            if (siguiente != null)
+            {
+                _lista.ListasDeEspera.Remove(siguiente);
+                _lista.SaveChanges();
+                return siguiente.Reserva;
+            }
+            return null;
 
-            var primero = _lista.ListasDeEspera.OrderBy(x => x.FechaSolicitud).First();
-
-            _lista.ListasDeEspera.Remove(primero);
-
-            return primero.Reserva;
         }
 
         public List<ListaDeEspera> GetListaDeEspera()

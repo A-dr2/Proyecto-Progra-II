@@ -12,17 +12,10 @@
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
         public required string Motivo { get; set; }
+        public int MesaId { get; set; }
+        public Mesa Mesa { get; set; }
 
 
 
-        //???  public List<ListaDeEspera> ListasDeEspera { get; set; } = null!;
-
-        /*  public class EstadoMesa
-          {
-              public int Id { get; set; }
-                                                                        // Este funcionaria para estados personalisados, pero no es necesario si tienes una idea distinta
-              public string Nombre { get; set; } = "";
-              // Ej: Disponible, Ocupada, Bloqueada, Mantenimiento
-          } */
     }
 }

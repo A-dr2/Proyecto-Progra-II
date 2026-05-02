@@ -9,4 +9,6 @@ public class Mesa
     public int EstadoMesaId { get; set; }
     public EstadoMesa EstadoMesa { get; set; } = null!;
 
+    public List<EstadoMesa> Bloqueos { get; set; } = new();
+
 }

@@ -15,6 +15,6 @@
         public ICollection<TurnoReserva> TurnoReservas { get; set; } = new List<TurnoReserva>();
 
         public int EstadoReservaId { get; set; }
-        public EstadoReserva EstadoReserva { get; set; } = null!;
+        public EstadoReserva EstadoReserva { get; set; }
     }
 }

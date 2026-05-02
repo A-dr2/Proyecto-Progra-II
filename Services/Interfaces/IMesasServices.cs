@@ -6,8 +6,7 @@ namespace Proyecto_Progra_II.Services.Interfaces
     {
         public List<Mesa> GetAllMesas();
         public Mesa GetMesaById(int id);
-        public Mesa CreateMesa(Mesa mesa);
-        public Mesa UpdateMesa(int id, Mesa mesa);
+        public Mesa CrearMesa(Mesa mesa);
 
         public bool EstaDisponible(int mesaId);
 
