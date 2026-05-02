@@ -2,7 +2,7 @@
 
 namespace Proyecto_Progra_II.Services.Interfaces
 {
-    public interface IListaDeEsperaServices
+    public interface IListaDeEsperaSerives
     {
         public List<ListaDeEspera> GetListaDeEspera();
        public ListaDeEspera GetListaDeEsperaById(int id);  
