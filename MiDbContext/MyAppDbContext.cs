@@ -32,7 +32,7 @@ namespace Proyecto_Progra_II.MiDbContext
     new Mesa { Id = 1, Capacidad = 4, ZonaId = 1, EstadoMesaId = 1 },
     new Mesa { Id = 2, Capacidad = 4, ZonaId = 1, EstadoMesaId = 2 },
     new Mesa { Id = 3, Capacidad = 4, ZonaId = 1, EstadoMesaId = 3 },
-    new Mesa { Id = 4, Capacidad = 4, ZonaId = 1 }
+    new Mesa { Id = 4, Capacidad = 4, ZonaId = 1, EstadoMesaId = 4 }
     // ... resto igual
 
 
@@ -43,11 +43,11 @@ namespace Proyecto_Progra_II.MiDbContext
                 new Zona { Id = 3, Nombre = "Sala VIP" }
                 );
             modelBuilder.Entity<EstadoMesa>().HasData(
-     new EstadoMesa { Id = 1, TipoBloqueo = TipoBloqueo.Disponible },
-     new EstadoMesa { Id = 2, TipoBloqueo = TipoBloqueo.Mantenimiento },
-     new EstadoMesa { Id = 3, TipoBloqueo = TipoBloqueo.EventoEspecial },
-     new EstadoMesa { Id = 4, TipoBloqueo = TipoBloqueo.Reserva }
- );
+    new EstadoMesa { Id = 1, TipoBloqueo = TipoBloqueo.Disponible, Motivo = "Mesa disponible" },
+    new EstadoMesa { Id = 2, TipoBloqueo = TipoBloqueo.Mantenimiento, Motivo = "En mantenimiento", FechaInicio = new DateTime(2026, 5, 1, 8, 0, 0), FechaFin = new DateTime(2026, 5, 5, 20, 0, 0) },
+    new EstadoMesa { Id = 3, TipoBloqueo = TipoBloqueo.EventoEspecial, Motivo = "Evento privado", FechaInicio = new DateTime(2026, 5, 10, 18, 0, 0), FechaFin = new DateTime(2026, 5, 10, 23, 0, 0) },
+    new EstadoMesa { Id = 4, TipoBloqueo = TipoBloqueo.Reserva, Motivo = "Mesa reservada" }
+);
             modelBuilder.Entity<Reserva>().HasData(
                new Reserva { Id = 1, ClienteId = 1, CantidadPersonas = 4, Fecha = DateTime.Now/*Esto hay que ponerlo en un rango de horas (23,0,2,1) o algo así*/},
                new Reserva { Id = 2, ClienteId = 2, CantidadPersonas = 2, Fecha = new DateTime(2023, 10, 25, 18, 0, 0) }

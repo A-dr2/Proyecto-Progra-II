@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|c:\\users\\lochi\\escritorio\\proyecto progra ii\\controllers\\listadeesperacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|solutionrelative:controllers\\listadeesperacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|c:\\users\\lochi\\escritorio\\proyecto progra ii\\services\\reservasservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|solutionrelative:services\\reservasservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|c:\\users\\lochi\\escritorio\\proyecto progra ii\\controllers\\estadomesacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|solutionrelative:controllers\\estadomesacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|c:\\users\\lochi\\escritorio\\proyecto progra ii\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|c:\\users\\lochi\\escritorio\\proyecto progra ii\\services\\mesasservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABAF0F4E-634B-4AAA-A3F6-6971E6FC0FCA}|Proyecto Progra II.csproj|solutionrelative:services\\mesasservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,42 +42,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ListaDeEsperaController.cs",
-              "DocumentMoniker": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\Controllers\\ListaDeEsperaController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ListaDeEsperaController.cs",
-              "ToolTip": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\Controllers\\ListaDeEsperaController.cs",
-              "RelativeToolTip": "Controllers\\ListaDeEsperaController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T22:33:04.734Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "EstadoMesaController.cs",
-              "DocumentMoniker": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\Controllers\\EstadoMesaController.cs",
-              "RelativeDocumentMoniker": "Controllers\\EstadoMesaController.cs",
-              "ToolTip": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\Controllers\\EstadoMesaController.cs",
-              "RelativeToolTip": "Controllers\\EstadoMesaController.cs",
+              "Title": "MesasServices.cs",
+              "DocumentMoniker": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\Services\\MesasServices.cs",
+              "RelativeDocumentMoniker": "Services\\MesasServices.cs",
+              "ToolTip": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\Services\\MesasServices.cs",
+              "RelativeToolTip": "Services\\MesasServices.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T22:33:03.754Z",
+              "WhenOpened": "2026-05-03T07:20:57.93Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\.gitignore",
-              "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\.gitignore",
-              "RelativeToolTip": ".gitignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-05-02T22:33:01.206Z",
+              "DocumentIndex": 0,
+              "Title": "ReservasServices.cs",
+              "DocumentMoniker": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\Services\\ReservasServices.cs",
+              "RelativeDocumentMoniker": "Services\\ReservasServices.cs",
+              "ToolTip": "C:\\Users\\lochi\\Escritorio\\Proyecto Progra II\\Services\\ReservasServices.cs",
+              "RelativeToolTip": "Services\\ReservasServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-03T07:20:56.31Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",

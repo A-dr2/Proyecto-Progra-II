@@ -6,8 +6,7 @@
         public string Nombre { get; set; }
         public string Telefono { get; set; }
         public string Email { get; set; }
-
-        public List<Reserva> Reservas { get; set; }
+        public List<Reserva> Reservas { get; set; } = new List<Reserva>();
     }
 
     public class ClienteDto

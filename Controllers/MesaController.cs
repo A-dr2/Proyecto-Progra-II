@@ -17,21 +17,21 @@ namespace Proyecto_Progra_II.Controllers
 
         // GET: api/Mesa
         [HttpGet]
-        public IEnumerable<Mesa> Get()
+        public IEnumerable<MesaDto> Get()
         {
             return _mesasServices.GetAll();
         }
 
         // GET: api/Mesa/5
         [HttpGet("{id}")]
-        public Mesa Get(int id)
+        public MesaDto Get(int id)
         {
             return _mesasServices.GetById(id);
         }
 
         // GET: api/Mesa/zona/1
         [HttpGet("zona/{zonaId}")]
-        public IEnumerable<Mesa> GetByZona(int zonaId)
+        public IEnumerable<MesaDto> GetByZona(int zonaId)
         {
             return _mesasServices.GetByZona(zonaId);
         }
@@ -45,7 +45,7 @@ namespace Proyecto_Progra_II.Controllers
 
         // POST: api/Mesa
         [HttpPost]
-        public Mesa Post([FromBody] Mesa mesa)
+        public MesaDto   Post([FromBody] MesaDto mesa)
         {
             return _mesasServices.Create(mesa);
         }

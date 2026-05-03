@@ -1,4 +1,5 @@
-﻿using Proyecto_Progra_II.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using Proyecto_Progra_II.Entities;
 using Proyecto_Progra_II.MiDbContext;
 using Proyecto_Progra_II.Services.Interfaces;
 
@@ -17,6 +18,7 @@ namespace Proyecto_Progra_II.Services
         public List<ListaDeEspera> GetAll()
         {
             return _context.ListasDeEspera
+                .Include(l => l.Cliente)
                 .OrderBy(l => l.FechaSolicitud)
                 .ToList();
         }
@@ -33,12 +35,16 @@ namespace Proyecto_Progra_II.Services
 
             _context.ListasDeEspera.Add(lista);
             _context.SaveChanges();
-            return lista;
+
+            return _context.ListasDeEspera
+                .Include(l => l.Cliente)
+                .FirstOrDefault(l => l.Id == lista.Id)!;
         }
 
         public Reserva? ObtenerSiguiente()
         {
             var siguiente = _context.ListasDeEspera
+                .Include(l => l.Cliente)
                 .Where(l => l.Estado == EstadoListaEspera.Esperando)
                 .OrderBy(l => l.FechaSolicitud)
                 .FirstOrDefault();

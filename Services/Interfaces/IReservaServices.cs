@@ -4,7 +4,7 @@ namespace Proyecto_Progra_II.Services.Interfaces
 {
     public interface IReservaServices
     {
-        public List<Reserva> GetAll();
+        public List<ReservaDto> GetAll();
         public Reserva GetById(int id);
         public Reserva? Create(Reserva reserva);
         public Reserva CambiarEstado(int id, EstadoReserva estado);

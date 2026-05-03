@@ -31,9 +31,10 @@ namespace Proyecto_Progra_II.Controllers
 
         // GET: api/Zona/5
         [HttpGet("{id}")]
-        public Zona Get(int id)
+        public ZonaDto Get(int id)
         {
-            return _zonasServices.GetById(id);
+            var zona = _zonasServices.GetById(id);
+            return new ZonaDto { Id = zona.Id, Nombre = zona.Nombre };
         }
 
         // POST: api/Zona
